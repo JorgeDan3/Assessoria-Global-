@@ -1,0 +1,840 @@
+
+*{
+    margin: 0%;
+    font-family: sans-serif;
+}
+
+html {scroll-behavior: smooth;}
+
+body{
+    /*background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+     */
+    background-color: rgb(230, 230, 230);
+}
+
+
+/*---------  GRID-LAYOUT -------- */
+
+#contenidor {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30px 90px auto auto;
+    
+    
+    /* padding: 0.5em */
+}
+
+p::selection {
+    background-color: black;
+     color: white;
+}
+h1::selection {
+    background-color: black;
+     color: white;
+}
+h3::selection {
+    background-color: black;
+     color: white;
+}
+a::selection {
+    background-color: black;
+     color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* -----------------------------HEADER--------------------------------- */
+
+
+.cap {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 1fr;
+    position: sticky;
+    top: 0;
+    background-color: black;
+    backdrop-filter: blur(5px);
+    z-index: 2;
+    background: black;
+    transition: all 0.5s;
+    
+}
+
+
+.navbar-scrolled {
+    /* originalmente en tansparent */
+    background-color: black;
+    box-shadow: 0 13px 10px rgba(0, 0, 0, 0.15); 
+    color: black;
+    /* 3px 2ª valor original */
+}
+
+
+/* valors al entrar el cursor en el navbar */
+.navbar-scrolled2 {
+    background-color: black;
+    box-shadow: 0 13px 10px rgba(0, 0, 0, 0.15);
+}
+
+.logo-header {justify-self: center;}
+
+.logo1 {
+    filter: drop-shadow( 2px 2px 4px rgba(0, 0, 0, 0.705))
+}
+
+.logo2 {
+    display: flex;
+    justify-content: end;
+}
+
+.top-header {
+    display: flex;
+    gap: 1.5rem;
+    padding-left: 12rem;
+    justify-content: left;
+    align-items: center;
+    background-color: rgb(175, 177, 177);
+}
+
+.top-header a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Asap', sans-serif;
+    font-size: 14px;
+}
+
+.topnav {
+    background-color: white;
+    overflow: hidden;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    background-color: transparent;
+    justify-content: left;
+    
+}
+
+  /* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    font-family: 'Asap', sans-serif;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+    /* border-radius: 15px; */
+    text-transform: uppercase;
+}
+
+.topnav a:hover {
+    color: #bdbdbd;
+}
+
+
+.active {
+    background-color: rgb(156, 78, 78);
+    color: white;
+}
+
+  /* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+    display: none;
+}
+
+  /* Dropdown container - needed to position the dropdown content */
+.dropdown {
+    float: left;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    /* border-radius: 15px; */
+    
+}
+
+  /* Style the dropdown button to fit inside the topnav */
+.dropdown .dropbtn {
+    font-size: 17px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    font-family: 'Asap', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.option1 {
+    border-left: 1px solid rgba(173, 173, 173, 0.418);
+    padding-left: 15px;
+}
+
+  /* Style the dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    animation: fadein 0.7s;
+    /* overflow: hidden; opcion de eliminar */
+    /* border-radius: 15px; */
+}
+/* Para safari,chrome, */
+@keyframes fadein {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+  /* style links drop-down */
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-family: 'Asap', sans-serif;
+    font-size: 17px;
+    border: 1px solid rgb(196, 196, 196);
+}
+
+
+  /* Add a dark background on topnav links and the dropdown button on hover */
+.dropdown:hover .dropbtn {
+    /* background-color: #555; */
+    color: #cccccc;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+    /* border-radius: 15px; */
+    color: black;
+    transform: translateX(10px);
+}
+
+  /* Show the dropdown menu when the user moves the mouse over the dropdown button */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+  /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+  @media screen and (max-width: 600px) {
+    .topnav a:not(:first-child), .dropdown .dropbtn {
+      display: none;
+    }
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+
+
+  @media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive a.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    .topnav.responsive .dropdown {float: none;}
+    .topnav.responsive .dropdown-content {position: relative;}
+    .topnav.responsive .dropdown .dropbtn {
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+  }
+
+a:hover {
+    transition: all 0.2s ease-in-out;
+    text-decoration: underline;
+}
+
+.dropbtn:hover {
+    text-decoration: underline;
+}
+
+/* transicion LOGO*/
+
+.logo1:hover { 
+    transform: scale(1.02) ;
+    transition: 0.3s ease-in;
+}
+
+.logo1:not(:hover) {
+    transform: scale(1) ;
+    transition: 0.3s ease-in;
+}
+
+/* .cap a:hover {
+    
+    transform: scale(0.80) ;
+    transition: 0.3s ease-in;
+    
+} */
+
+.cap a:not(:hover) {
+
+    transform: scale(1) ;
+    transition: 0.3s ease-in;
+    
+}
+
+
+/* ----------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------- CONTENT---------------------------- */
+
+.content {
+    /* padding: 40px; */
+    display: grid;
+    grid-template-rows: 1fr 1.5fr;
+    grid-template-columns: 1fr;
+}
+
+.main-content {
+    padding-right: 200px;
+    padding-left: 200px;
+    padding-top: 120px;
+    display: flex;
+    padding-bottom: 120px;
+    
+}
+
+.main-content article {
+    background-color: white;
+    padding: 40px;
+    padding-top: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Asap', sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.main-content p {
+    font-family: 'Poppins', sans-serif;
+}
+.border-cont {
+    background-image: url(img/main/fondo-index.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+.main-content article > h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    text-decoration: underline;
+    margin-top: 40px;
+    padding-left: 20px;
+}
+
+.main-title {
+    position: relative;
+    bottom: 20px;
+    left: 30px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    height: fit-content;    
+}
+
+.main-title h1{
+    background-color: white;
+    padding: 40px;
+    font-size: 37px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main-title h1::after {
+    content: "S.L";
+    font-weight: 600;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.main-title h1::first-letter  {
+    font-size: 36px;
+}
+
+/* primer li del nav */
+
+
+.mas {
+    text-align: left;
+}
+
+
+
+
+/* -------- SERVICIOS ESTILOS -------- */
+
+.servicios {
+    
+    margin:50px;
+    background-color: rgb(216, 216, 216);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+
+.title-serv {
+    /* margin: 30px; */
+    background-color: rgb(206, 206, 206);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+
+.title-serv h1{
+    font-family: sans-serif;
+    font-style: italic;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.title-serv p {
+    padding-top: 20px;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+
+.services {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    margin: 50px;
+    
+}
+
+/* .services:hover > :not(:hover) {
+    opacity: 0.4;
+} */
+
+#menu-btn {
+    display: none;
+}
+
+.services .service-item {
+    background-color: rgb(201, 201, 201);
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    padding: 25px;
+    /* nota he eliminado display felx ver que succede al volvver  */
+    /* flex sobra (crear css : ,service-item a solas y estilar ) */
+    flex-wrap: wrap;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 18rem;
+    /* antes era 15rem */
+    width: 320px;
+    height: 180px;
+}
+
+
+
+.service-item:hover {
+    transform: translatey(-10px);
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.service-item:not(:hover) {
+    transform: translatey(0px);
+    transition: all 0.3s ease-in-out;
+}
+
+.service-item:hover .description h3{
+    text-decoration: underline;
+    transition: all 0.3s ease-in-out;
+    
+}
+
+.icono {
+    margin-right: 10px;
+    text-align: center;
+}
+
+/* .service h3+p {
+    text-align: center;
+} */
+
+.service-item h3{
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 5px;
+    
+}
+
+.service-item p {
+    font-family: 'Asap', sans-serif;
+}
+
+
+
+@media (max-width: 780px) {
+    .main-content {
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-top: 20px;
+    }
+    
+    .topnav {
+        display: none;
+    }
+
+    .logo22 {display: none;}
+
+    .cap {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .border-cont {
+        
+    }
+
+    .content {
+        /* padding: 40px; */
+        display: grid;
+        grid-template-rows: 0.5fr 1.5fr;
+    
+    }
+}
+
+@media (max-width: 1280px) {
+    .main-content {
+        padding: 20px;
+        padding-right: 60px;
+        padding-top: 50px;
+    }
+
+    .logo22 {
+        z-index: 0;
+    }
+
+    .topnav a {
+        z-index: 3;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --------------------------------- FOOTER ----------------------------------------*/
+
+
+footer {
+    background: #0E1219;
+    color: white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    bottom: 0px;
+}
+
+.footer-top-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8rem;
+    margin: 0 auto;
+    padding: 16px;
+    margin-top: 30px;
+    min-height: 160px;
+}
+
+.footer-top-wrapper > section {
+    width: 180px;
+}
+
+h2 {
+    text-align: left;
+    color: #d2d0e6;
+    margin-top: 0px;
+    margin-bottom: 16px;
+    opacity: 0.7;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+menu li {
+    margin-bottom: 16px;
+    
+}
+
+menu a:hover {
+    cursor: pointer;
+}
+
+menu h2 {
+    text-decoration: underline;
+}
+
+menu  a {
+    text-decoration: none;
+    color: white;
+}
+
+
+.logo {
+    width: 180px;
+    margin-bottom: 8px;
+    opacity: 0.3;
+    /* position: relative;
+    right: 150px;
+    bottom: 80px; */
+}
+
+.social-links {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    width: 180px;
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
+}
+
+.footer-top {
+    max-width: 800px;
+}
+
+.footer-bottom {
+    height: 30px;
+    margin-top: 48px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #080711;
+    /* antiguo color #1f1b3d */
+    padding: 4px;
+}
+
+.footer-bottom > small {
+    font-size: 14px;
+    margin: 0 4px;
+}
+
+
+
+/* .peu {
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-template-rows: 400px 1fr;
+}
+
+footer a{
+    color: black;
+    font-size: 14px;
+}
+
+
+footer p {
+    line-height: 30px;
+    font-size: 14px;
+    
+}
+
+.info-ofi a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+.titulo h3{
+    padding-bottom: 10px;
+    color: black;
+    font-size: 18px;
+    font-weight: 800px;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 40px;
+    background-color: #979A9A;
+} */
+
+.cookies-copy p{
+    color: rgb(255, 255, 255);
+    
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    font-size: 12px;
+}
+
+.cookies-copy{
+    padding: 10px;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 20px 10px 70px 20px rgb(78, 78, 78) ;
+}
+
+
+/* .icons img:hover {
+    transform: scale(1.15) ;
+    transition: 0.2s ease-in;
+}
+
+.icons img:not(:hover) {
+    transform: scale(1) ;
+    transition: 0.3s ease-in;
+} */
+
+
+/* TRANSICION BACK TO TOP */
+.top  {
+    padding-top:20px ;
+}
+
+/* transicion img back to top*/
+.top img:hover {
+    transform: scale(0.95) ;
+    transition: 0.5s ease-in;
+}
+
+.top img:not(:hover) {
+    transform: scale(1) ;
+    transition: 0.5s ease-in;
+}
+/* ------------------------------------- */
+
+
+footer a:hover {
+    color: white;
+     text-decoration: underline; /* underline en a:hover */
+}
+
+
+/* MEDIA QUERIES */
+
+/* @media screen and (max-width:768px){
+    #contenidor{
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 10% 20% 50%  10% 10%;
+    }
+} */
+
+
+/* effecto nav underline  */
+
+
+ /* a:after {
+   content: '';
+   position: absolute;
+   width: 100%;
+   transform: scaleX(0);
+   height: 2px;
+   bottom: 0;
+   left: 0;
+   background-color: 
+ #ffffff;
+   transform-origin: bottom right;
+   transition: transform 0.25s ease-out;
+ }
+ 
+ a:hover:after {
+   transform: scaleX(1);
+   transform-origin: bottom left;
+ } */
+
+input[type=email]{
+    padding: 10px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+input[type=submit]{
+    margin-left: 5px;
+    padding: 8px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+.enviar:hover {
+    
+    background-color: #d1d1d1;
+    box-shadow:5px 10px 15px 10px rgba(0,0,0,0.06);
+}
