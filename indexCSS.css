@@ -1,0 +1,921 @@
+
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: sans-serif;
+}
+
+html {scroll-behavior: smooth;}
+
+body{
+    background-color: rgb(230, 230, 230);
+}
+
+
+/*---------  GRID-LAYOUT -------- */
+
+#contenidor {
+    display: grid;
+    
+    grid-template-columns: 1fr;
+    grid-template-rows: 30px 90px auto auto auto;
+    
+    /* padding: 0.5em */
+}
+
+p::selection {
+    background-color: black;
+    color: white;
+}
+h1::selection {
+    background-color: black;
+    color: white;
+}
+h3::selection {
+    background-color: black;
+    color: white;
+}
+a::selection {
+    background-color: black;
+    color: white;
+}
+
+
+
+
+
+
+/* -----------------------------HEADER--------------------------------- */
+
+
+.cap {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 1fr;
+    position: sticky;
+    top: 0px;
+    background-color: rgb(236, 236, 236);
+    /* backdrop-filter: blur(5px); */
+    z-index: 2;
+    box-shadow: 0 13px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.5s;
+    
+}
+
+
+.navbar-scrolled {
+    /* originalmente en tansparent */
+    background-color: rgb(233, 233, 233);
+    box-shadow: 0 13px 10px rgba(0, 0, 0, 0.15);
+    color: black;
+    /* 3px 2ª valor original */
+}
+
+
+/* valors al entrar el cursor en el navbar */
+.navbar-scrolled2 {
+    background-color: rgb(233, 233, 233);
+    box-shadow: 0 13px 10px rgba(0, 0, 0, 0.15);
+}
+
+.logo-header {justify-self: center;}
+
+.logo1 {
+    filter: drop-shadow( 2px 2px 4px rgba(0, 0, 0, 0.705))
+}
+
+.logo2 {
+    display: flex;
+    justify-content: end;
+}
+
+.top-header {
+    display: flex;
+    gap: 1.5rem;
+    padding-left: 10rem;
+    justify-content: left;
+    align-items: center;
+    background-color: rgb(196, 196, 196);
+    top: 0;
+    z-index: 2;
+}
+
+.top-header a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Asap', sans-serif;
+    font-size: 14px;
+}
+
+.topnav {
+    background-color: white;
+    overflow: hidden;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    background-color: transparent;
+    justify-content: left;
+    
+}
+
+  /* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    font-family: 'Barlow', sans-serif;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 21px;
+    font-weight: bold;
+
+    /* border-radius: 15px; */
+    /* text-transform: uppercase; */
+}
+
+.topnav a:hover {
+    color: #6e6e6e;
+}
+
+
+.active {
+    background-color: rgb(156, 78, 78);
+    color: white;
+}
+
+  /* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+    display: none;
+}
+
+  /* Dropdown container - needed to position the dropdown content */
+.dropdown {
+    float: left;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    /* border-radius: 15px; */
+    
+}
+
+  /* Style the dropdown button to fit inside the topnav */
+.dropdown .dropbtn {
+    font-size: 21px;
+    border: none;
+    outline: none;
+    color: black;
+    padding: 26px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    /* text-transform: uppercase; */
+}
+
+.option1 {
+    border-left: 1px solid rgba(173, 173, 173, 0.418);
+    padding-left: 15px;
+}
+
+  /* Style the dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    animation: fadein 0.7s;
+    /* overflow: hidden; opcion de eliminar */
+    /* border-radius: 15px; */
+}
+/* Para safari,chrome, */
+@keyframes fadein {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+  /* style links drop-down */
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-family: 'Barlow', sans-serif;
+    font-size: 17px;
+    border: 1px solid rgb(196, 196, 196);
+}
+
+
+  /* Add a dark background on topnav links and the dropdown button on hover */
+.dropdown:hover .dropbtn {
+    /* background-color: #555; */
+    color: #747474;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+    /* border-radius: 15px; */
+    color: black;
+    transform: translateX(10px);
+    
+}
+
+  /* Show the dropdown menu when the user moves the mouse over the dropdown button */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+  /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+
+
+
+a:hover {
+    transition: all 0.2s ease-out;
+    text-decoration: underline;
+}
+
+.dropbtn:hover {
+    text-decoration: underline;
+}
+
+/* transicion LOGO*/
+
+.logo1:hover { 
+    transform: scale(1.02) ;
+    transition: 0.3s ease-in;
+}
+
+.logo1:not(:hover) {
+    transform: scale(1) ;
+    transition: 0.3s ease-in;
+}
+
+/* .cap a:hover {
+    
+    transform: scale(0.80) ;
+    transition: 0.3s ease-in;
+    
+} */
+
+.cap a:not(:hover) {
+
+    transform: scale(1) ;
+    transition: 0.3s ease-in;
+    
+}
+
+
+/* ----------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------- CONTENT---------------------------- */
+
+.content {
+    /* padding: 40px; */
+    display: grid;
+    grid-template-rows: 1fr 1.5fr;
+    grid-template-columns: 1fr;
+    
+}
+
+.main-content {
+    padding-right: 200px;
+    padding-left: 200px;
+    padding-top: 120px;
+    display: flex;
+    padding-bottom: 120px;
+    
+}
+
+.main-desc {
+    padding-left: 20px;
+}
+
+.main-content article {
+    background-color: white;
+    padding: 40px;
+    padding-top: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    justify-content: center;
+    align-items: left;
+    font-family: 'Asap', sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.main-content p,a {
+    font-family: 'Poppins', sans-serif;
+}
+.border-cont {
+    background-image: url(img/main/fondo-index.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+article > h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    text-decoration: underline;
+    margin-top: 40px;
+    padding-left: 20px;
+}
+
+.main-title {
+    position: relative;
+    bottom: 20px;
+    left: 50px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    height: fit-content;    
+}
+
+.main-title h1{
+    background-color: white;
+    padding: 40px;
+    font-size: 37px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main-title h1::after {
+    content: "S.L";
+    font-weight: 600;
+    font-size: 12px;
+    font-style: italic;
+    color: #868686;
+}
+
+.main-title h1::first-letter  {
+    font-size: 36px;
+}
+
+
+
+.mas{
+    color: rgb(136, 136, 136);
+    text-decoration: none;
+    width: max-content;
+    padding-left: 20px;
+}
+
+.mas:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+
+
+
+
+/* -------- SERVICIOS ESTILOS -------- */
+
+.servicios {
+    
+    margin:50px;
+    background-color: rgb(216, 216, 216);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+
+.title-serv {
+    /* margin: 30px; */
+    background-color: rgb(206, 206, 206);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+
+.title-serv h1{
+    
+    font-style: italic;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.title-serv p {
+    padding-top: 20px;
+    font-weight: 600;
+    font-size: 25px;
+    font-family: 'Barlow', sans-serif;
+}
+
+
+
+
+
+.services {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    margin: 50px;
+    
+}
+
+/* .services:hover > :not(:hover) {
+    opacity: 0.4;
+} */
+
+
+.services .service-item {
+    background-color: rgb(201, 201, 201);
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+    padding: 25px;
+    /* nota he eliminado display felx ver que succede al volvver  */
+    /* flex sobra (crear css : ,service-item a solas y estilar ) */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 18rem;
+    /* antes era 15rem */
+    width: 250px;
+    height: 308px; 
+    /* 250 provar */
+}
+
+
+
+.service-item:hover {
+    
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.1);
+    background-color: rgb(190, 190, 190);
+    cursor: pointer;
+    transform: translatey(-10px);
+
+.btn-mas {
+    transition: all 0.3s ease-in-out;
+    animation: fadein 0.7s;
+    opacity: 1;
+    transform: translatey(-50px);
+    
+}
+
+
+
+} 
+
+.service-item:not(:hover) {
+    transform: translatey(0px);
+    transition:  0.3s ease-in-out;
+}
+
+.service-item:hover .description h3{
+    text-decoration: underline;
+    transition: all 0.3s ease-in-out;
+    
+}
+
+@keyframes scale {
+    from {transform: scale(1.2);}
+    to {transform: scale(1);}
+}
+
+.icono {
+    margin-right: 10px;
+    text-align: center;
+}
+
+/* .service h3+p {
+    text-align: center;
+} */
+
+
+.service-item h3{
+    font-family: 'Barlow', sans-serif;
+    margin-bottom: 5px;
+    
+}
+
+.service-item p {
+    font-family: 'Barlow', sans-serif;
+    font-size:18px;
+    
+    
+}
+
+.service-item img {
+    margin: 5px;
+}
+
+.btn-mas {margin-top: 10px;position: relative; top: 50px; opacity: 0;}
+
+.btn-mas a{
+    border: 2px solid rgb(136, 136, 136);
+    border-radius: 15px;
+    padding: 10px;
+    font-weight: 800;
+    font-family: 'Barlow', sans-serif;
+    text-decoration: none;
+    color:rgb(136, 136, 136);
+    
+}
+
+.btn-mas a:hover {
+    color: rgb(0, 0, 0);
+    border: 2px solid rgb(0, 0, 0);
+}
+
+
+
+
+
+
+/*------------- FORM CONTACTO ----------*/
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-color: #dadada;
+    
+}
+
+.form-cont {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    
+}
+
+.form-cont h2{
+    text-align: center;
+    font-family: 'Barlow', sans-serif;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.enviar {
+    display: flex;
+    justify-content: center;
+}
+
+#btn-enviar {
+    background-color: rgb(214, 214, 214);
+    padding: 10px;
+    width: 28vw;
+    font-size: 16px;
+    font-family: 'Barlow', sans-serif;
+    cursor: pointer;
+}
+
+#btn-enviar:hover {
+    background-color: rgb(190, 190, 190);
+    
+    transition: all 0.3s ease-in-out;
+}
+
+label,a {
+    font-family: 'Barlow', sans-serif;
+    color: black;
+    
+}
+
+.condi:hover{
+    color: white;
+}
+
+input,textarea,select {
+    padding: 10px;
+    border: 1px solid black;
+    background-color: #e9e9e9;
+    accent-color: black;
+}
+
+
+
+
+@media (max-width: 780px) {
+    .main-content {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 20px;
+        flex-direction: column;
+    }
+
+    .top-header {
+        padding-left: 0;
+        justify-content: center ;
+    }
+
+    #contenidor {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 30px 90px auto auto auto;
+        
+        /* padding: 0.5em */
+    }
+    
+    .topnav {
+        display: none;
+    }
+
+    .logo22 {display: none;}
+
+    .cap {
+        grid-template-columns: 1fr 1fr;
+        backdrop-filter: none;
+        
+    }
+
+    .logo1 {
+        filter: none
+    }
+
+    .main-desc {
+        width: 400px;
+        position: relative;
+        padding-left: 0;
+    }
+
+    .servicios {
+        border-radius: 0;
+        margin: 0px;
+    }
+
+    .services {
+        padding: 10px;
+    }
+
+
+    .main-title {
+        position: relative;
+        top: 30px;
+        right: 120px;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        width: fit-content;    
+    }
+
+    .content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 900px auto auto auto;
+        
+    }
+
+    article > h3 {
+        padding-left: 0px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .main-secu {
+        border-bottom: 1px solid black;
+    }
+
+}
+
+/* @media (max-width: 1280px) {
+    .main-content {
+        padding: 20px;
+        padding-right: 60px;
+        padding-top: 50px;
+    }
+
+    .logo22 {
+        z-index: 0;
+    }
+
+
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --------------------------------- FOOTER ----------------------------------------*/
+
+
+footer {
+    /* oriiginal #0E1219 */
+    background: #c5c5c5;
+    color: white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    bottom: 0px;
+}
+
+.footer-top-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8rem;
+    margin: 0 auto;
+    padding: 16px;
+    margin-top: 30px;
+    min-height: 160px;
+}
+
+.footer-top-wrapper > section {
+    width: 180px;
+}
+
+menu h2 {
+    text-align: left;
+    color: #333333;
+    margin-top: 0px;
+    margin-bottom: 16px;
+    opacity: 0.8;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: underline;
+    font-family: 'Barlow', sans-serif;
+}
+
+menu h3 {
+    color: #1c1c21;
+    font-family: 'Barlow', sans-serif;
+}
+
+menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    
+}
+
+menu li {
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+}
+
+menu a:hover {
+    cursor: pointer;
+}
+
+
+
+menu  a,p {
+    text-decoration: none;
+    color: black;
+}
+
+
+.logo {
+    width: 180px;
+    margin-bottom: 8px;
+    opacity: 0.3;
+    /* position: relative;
+    right: 150px;
+    bottom: 80px; */
+}
+
+.social-links {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    width: 180px;
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
+}
+
+.footer-top {
+    max-width: 800px;
+}
+
+.footer-bottom {
+    height: 30px;
+    margin-top: 48px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #1c1c21;
+    /* antiguo color #1f1b3d */
+    padding: 4px;
+}
+
+.footer-bottom > small {
+    font-size: 14px;
+    margin: 0 4px;
+}
+
+
+
+
+
+.cookies-copy p{
+    color: rgb(255, 255, 255);
+    
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    font-size: 12px;
+}
+
+.cookies-copy{
+    padding: 10px;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 20px 10px 70px 20px rgb(78, 78, 78) ;
+}
+
+
+
+/* TRANSICION BACK TO TOP */
+.top  {
+    padding-top:20px ;
+}
+
+/* transicion img back to top*/
+.top img:hover {
+    transform: scale(0.95) ;
+    transition: 0.5s ease-in;
+}
+
+.top img:not(:hover) {
+    transform: scale(1) ;
+    transition: 0.5s ease-in;
+}
+/* ------------------------------------- */
+
+
+footer a:hover {
+    color: white;
+     text-decoration: underline; /* underline en a:hover */
+}
+
+
+/* MEDIA QUERIES */
+
+/* @media screen and (max-width:768px){
+    #contenidor{
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 10% 20% 50%  10% 10%;
+    }
+} */
+
+
+/* effecto nav underline  */
+
+
+ /* a:after {
+   content: '';
+   position: absolute;
+   width: 100%;
+   transform: scaleX(0);
+   height: 2px;
+   bottom: 0;
+   left: 0;
+   background-color: 
+ #ffffff;
+   transform-origin: bottom right;
+   transition: transform 0.25s ease-out;
+ }
+ 
+ a:hover:after {
+   transform: scaleX(1);
+   transform-origin: bottom left;
+ } */
